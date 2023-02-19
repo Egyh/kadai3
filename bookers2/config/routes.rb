@@ -3,6 +3,7 @@ root to: 'homes#top'
 devise_for :users
 
 resources :books, only: [:new, :create,:index, :edit, :show, :destroy]
+resources :users, only: [:index, :show, :edit, :update]
 
 get 'homes/about' => 'homes#about', as: 'about'
 
