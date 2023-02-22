@@ -4,4 +4,33 @@
 
 <%= render 'list', user: @user, book: @book %>
 
-＃col-md-8から記入していく
+<div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+      <table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+ <% @user_books.each do |book| %>
+ <tr>
+  <th>
+     <%= link_to user_path(@user.id) do %>
+      <%= image_tag @user.get_profile_image(80,80) %>
+        </th>
+   <% end %>
+   <td>
+ 　<%= link_to book_path(book.id) do %>
+   <%= book.title %></td>
+   <% end %>
+
+  <td><%= book.body %></td>
+<% end %>
+  </tbody>
+</table>
+    </div>

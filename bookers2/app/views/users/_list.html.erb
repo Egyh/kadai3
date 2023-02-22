@@ -5,7 +5,7 @@
   <h2>User info</h2>
 
   <%= image_tag user.get_profile_image(100,100) %>
-  
+
   <table class="table">
   <tbody><tr></tr>
   <tr>
@@ -19,21 +19,22 @@
    </tbody>
   </table>
 
-  <div class="row">
+
  <%= link_to edit_user_path(user.id) do%>
  <i class="fas fa-user-edit"></i>
  <% end %>
+
 
 <h1>New book</h1>
 
   <%= form_with model: book do |f| %>
 
-    <h4>Title</h4>
+    <div>Title</div>
       <%= f.text_field :title %>
 
-    <h4>Opinion</h4>
+    <div>Opinion</div>
       <%= f.text_area :body %>
-
+    <div>
     <%= f.submit 'Create Book' %>
-  <% end %>
-  
+  <% end %></div>
+  </div>
